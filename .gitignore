@@ -1,1 +1,6 @@
 __pycache__/
+.files/
+.vscode/
+.chainlit/
+.env
+.env.*
