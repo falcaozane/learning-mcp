@@ -151,7 +151,7 @@ def parse_intent_with_ai(user_query):
         2. Identify Indicators. 
            - If the user EXPLICITLY names indicators (e.g. "Show MACD"), use only those.
            - If the user is VAGUE (e.g. "Analyze Reliance", "How is the trend?"), use the "Current User Sidebar Selection" list provided above.
-           - If the sidebar selection is empty and the user is vague, default to ["SMA", "RSI"].
+           - If the sidebar selection is empty and the user is vague, default to ["SMA","EMA","RSI"].
         
         Output strictly in this JSON format:
         {{
@@ -171,7 +171,7 @@ def parse_intent_with_ai(user_query):
 
     except Exception as e:
         st.error(f"AI Parsing Error: {e}")
-        return "RELIANCE.NS", ["SMA"]
+        return "RELIANCE.NS", ["SMA", "EMA", "RSI"]
     
 
 def render_financial_chart(data, ticker):
